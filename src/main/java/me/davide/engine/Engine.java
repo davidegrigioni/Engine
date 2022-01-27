@@ -5,6 +5,7 @@ import me.davide.engine.commands.ListCommand;
 import me.davide.engine.commands.SetSpawnCommand;
 import me.davide.engine.commands.SpawnCommand;
 import me.davide.engine.listeners.FreezeListener;
+import me.davide.engine.listeners.SpawnListener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -32,6 +33,7 @@ public final class Engine extends JavaPlugin {
 
     private void registerEvents() {
         pm.registerEvents(new FreezeListener(), this);
+        pm.registerEvents(new SpawnListener(this), this);
     }
 
     private void registerConfig() {
